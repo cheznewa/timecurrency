@@ -1,6 +1,6 @@
 <?php
 require("config.php");
-$yourid = $_SERVER['REMOTE_ADDR'];
+$yourid = md5($_SERVER['REMOTE_ADDR']);
 if (file_exists($datadir."/".$yourid))
 {
 echo "Your Account Aleady Created!";
