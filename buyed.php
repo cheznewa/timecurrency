@@ -1,7 +1,7 @@
 <?php
 require("config.php");
 $getam = $_POST["amount"];
-$getto = md5($_POST["to"]);
+$getto = $_POST["to"]);
 $getid = md5($_SERVER['REMOTE_ADDR']);
 $gettime = intval(file_get_contents($datadir."/".$getid));
 $gettimeto = intval(file_get_contents($datadir."/".$getto));
