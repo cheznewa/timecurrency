@@ -1,13 +1,9 @@
 <?php
 require("config.php");
-$yourid = md5($_SERVER['REMOTE_ADDR']);
-if (file_exists($datadir."/".$yourid))
-{
-echo "Your Account Aleady Created!";
-}
-else
-{
-echo "Your Account Has Been Created And You Have : ".$defaulttime." Second";
+$yourpriv = bin2hex(random_bytes(32));
+$yourid = md5($yourpriv);
+echo "Your Account Has Been Created And You Have : ".$defaulttime." Second<br/>";
+echo "Your ID : $yourid<br/>Your Private : $yourpriv<br/>";
 $yourtime = time()+$defaulttime;
 file_put_contents($datadir."/".$yourid,$yourtime."\n");
-}
+

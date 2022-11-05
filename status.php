@@ -1,7 +1,7 @@
 <?php
 require("config.php");
-$getid = md5($_SERVER['REMOTE_ADDR']);
-$gettime = file_get_contents($datadir."/".$getid);
+$getid = $_GET["id"];
+$gettime = file_get_contents($datadir."/".md5($getid));
 $getbalance = intval($gettime)-time();
 if ($getbalance > 0)
 {
